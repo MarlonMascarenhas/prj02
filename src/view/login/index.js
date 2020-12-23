@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'firebase/auth';
+import {Link} from 'react-router-dom';
 
 import Logo from '../../assets/imagens/date.svg';
 import firebase from '../../config/firebase';
@@ -45,7 +46,7 @@ function Login(){
 
                 <div className="opcoes-login text-white my-5">
                     <a href="#" className="mx-2">Recuperar senha</a>
-                    <a href="#" className="mx-2">Quero me cadastrar</a>
+                    <Link to="/novousuario" className="mx-2">Quero me cadastrar</Link>
                 </div>
             </form>
 
