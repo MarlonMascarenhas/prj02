@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
-import './styles.css';
+import 'firebase/auth';
+
 import Logo from '../../assets/imagens/date.svg';
 import firebase from '../../config/firebase';
-import 'firebase/auth';
+import './styles.css';
 
 function Login(){
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [msg, setMsg] = useState('');
+
+    function handleLogin() {
+        firebase.auth()
+            .signInWithEmailAndPassword(email, senha)
+            .then(resultado=>{
+                setMsg('sucesso');
+            }).catch(error => {
+                setMsg('');
+            });
+    }
     
     return (
         <div className="login-content d-flex align-items-center text-center">
@@ -17,15 +29,18 @@ function Login(){
                 <img className="mb-4" src={Logo} width="72" height="72" alt="imagem de login"/>
                 <h1 className="h3 mb-3 font-weight-bold text-white">Login</h1>
 
-                <input type="email" id="inputEmail" className="form-control my-2" placeholder="E-mail"/>
-                <input type="passworld" id="inputPassworld" className="form-control my-2" placeholder="Senha"/>
+                <input type="email" id="inputEmail" className="form-control my-2" placeholder="E-mail" onChange={e =>setEmail(e.target.value) }/>
+                <input type="password" id="inputPassworld" className="form-control my-2" placeholder="Senha" onChange={e =>setSenha(e.target.value) }/>
 
-                <button className="btn btn-lg btn-login btn-block" type="button">Logar</button>
+                <button className="btn btn-lg btn-login btn-block" type="button" onClick={handleLogin}>Logar</button>
+                
+
 
                 <div className="text-white my-5">
-                    <span>WOW! <strong>Você está conectado</strong></span>
-                    <br/>
-                    <span>Ops! <strong>Verifique seu email e senha</strong></span>
+                    { msg === "sucesso" &&
+                    <span>WOW! <strong>Você está conectado</strong></span>}
+                    { msg === "" &&
+                    <span>Ops! <strong>Verifique seu email e senha</strong></span>}
                 </div>
 
                 <div className="opcoes-login text-white my-5">
