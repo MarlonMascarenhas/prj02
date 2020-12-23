@@ -3,12 +3,10 @@
   height: 100vh;
   padding: 15%;
   margin: auto;
-  background-color: #614ea6;
 }
-
 .btn-login {
-  background-color: #fff;
-  color: #614ea6;
+  background-color: #614ea6;
+  color: #fff;
 }
 
 .btn-login:hover {

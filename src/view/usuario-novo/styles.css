@@ -3,14 +3,15 @@
   height: 100vh;
   padding: 15%;
   margin: auto;
-  background-color: #614ea6;
 }
 
 .btn-create {
-  background-color: #fff;
+  background-color: #614ea6;
+  color: #ffff;
+}
+.titleCadastro {
   color: #614ea6;
 }
-
 .btn-create:hover {
   background-color: #f21667;
   color: #fff;
