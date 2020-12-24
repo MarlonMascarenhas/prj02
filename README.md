@@ -70,5 +70,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # prj02
+<<<<<<< HEAD
 
 crie uma pasta config/firebase.js e conecte com seu firebase
+=======
+crie uma pasta components/firebase.js e conecte com seu firebase
+>>>>>>> 946227d5896bd29b5fc9406b0ececf04da97a919
