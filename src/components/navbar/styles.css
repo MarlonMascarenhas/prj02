@@ -10,3 +10,7 @@
 .nav-item a:hover {
   color: #f21667;
 }
+
+ul li {
+  cursor: pointer;
+}

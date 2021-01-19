@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import 'firebase/auth';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 import Logo from '../../assets/imagens/date.svg';
 import firebase from '../../config/firebase';
 import './styles.css';
 import Navbar from '../../components/navbar';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Login(){
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [msg, setMsg] = useState('');
+    const dispatchEvent = useDispatch();
 
     function handleLogin() {
         firebase.auth()
             .signInWithEmailAndPassword(email, senha)
             .then(resultado=>{
                 setMsg('sucesso');
+                setTimeout(() => {
+                    dispatchEvent({
+                        type:'LOG_IN',
+                        payload: {usuarioEmail: email}
+                    })
+                }, 2000)
+                
             }).catch(error => {
                 setMsg('');
             });
@@ -28,6 +37,8 @@ function Login(){
             <Navbar/>
         
             <div className="login-content d-flex align-items-center text-center">
+
+                {useSelector(state => state.user.usuarioLogado) === 1 ? <Redirect to="/"/> : null}
 
                 <form className="form-sign mx-auto">
 
