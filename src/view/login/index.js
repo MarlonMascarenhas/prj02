@@ -60,8 +60,8 @@ function Login(){
                     </div>
 
                     <div className="opcoes-login text-white my-5">
-                        <a href="#" className="mx-2">Recuperar senha</a>
-                        <Link to="/novousuario" className="mx-2">Quero me cadastrar</Link>
+                        <Link to="/recuperaSenha"  className="mx-2">Recuperar senha</Link>
+                        <Link to="/novousuario"  className="mx-2">Quero me cadastrar</Link>
                     </div>
                 </form>
 

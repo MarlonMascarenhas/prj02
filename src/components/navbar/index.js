@@ -41,7 +41,7 @@ function NavBar(){
                             <Link className="nav-link" to="/">Meus eventos <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Modificar Eventos <span className="sr-only">(current)</span></Link>
+                            <Link className="nav-link" to="/cadastraEvento">Publicar eventos <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
                             <span className="nav-link" onClick={handleLogout}>Deslogar<span className="sr-only">(current)</span></span>
