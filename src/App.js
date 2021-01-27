@@ -13,6 +13,7 @@ function App() {
 
     <BrowserRouter>
       <Route exact path="/" component={Home}/>
+      <Route exact path="/eventos/:parametro" component={Home}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/novousuario" component={UsuarioNovo}/>
       <Route exact path="/recuperaSenha" component={UsuarioRecuperaSenha} />

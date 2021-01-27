@@ -18,7 +18,7 @@ function NavBar(){
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark ">
-            <span className="navbar-brand" href="#" text-white font-wight-bold>IFMG eventos</span>
+            <Link className="nav-link" to="/"> <span className="navbar-brand" text-white font-wight-bold>IFMG eventos</span> </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -38,7 +38,7 @@ function NavBar(){
                 { useSelector(state => state.user.usuarioLogado) === 1 &&
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Meus eventos <span className="sr-only">(current)</span></Link>
+                            <Link className="nav-link" to="/eventos/meus">Meus eventos <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/cadastraEvento">Publicar eventos <span className="sr-only">(current)</span></Link>

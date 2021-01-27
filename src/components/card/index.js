@@ -4,15 +4,18 @@ import {Link} from 'react-router-dom';
 import './card.css';
 import firebase from '../../config/firebase';
 
-function EventoCard(key, img, titulo, detalhes, visualizacoes){
-
+function EventoCard({key, img, titulo, detalhes, visualizacoes}){
+    const [url, setUrl] = useState()
+    
     useEffect(() => {
-
-    }, [])
+        firebase.storage().ref(`imagens/${img}`).getDownloadURL()
+            .then(url => setUrl(url))
+            .catch(erro => setUrl("https://via.placeholder.com/100x50"));
+    }, [url]);
 
     return (
         <div className="col-md-3 col-sm-12">
-            <img src="https://via.placeholder.com/100x50" className="img-cartao card-img" alt="banner do evento"/>
+            <img src={url} className="img-cartao card-img" alt="banner do evento"/>
             <div className="card-body">
                 <h5>{titulo}</h5>
                 <p className="text-cartao">{detalhes}</p>
