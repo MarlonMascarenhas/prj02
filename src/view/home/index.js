@@ -51,11 +51,13 @@ function Home({match}){
                     className="form-control text-left" />
             </div>
             <div className="row p-3">
+                
                 { eventos.map(item => <EventoCard key={item.id} 
                                                 img={item.foto} 
                                                 titulo={item.titulo} 
                                                 detalhes={item.detalhe} 
-                                                visualizacoes={item.visualizacoes} />) }
+                                                visualizacoes={item.visualizacoes} 
+                                                id={item.id} />) }
             </div>
             
         </div>

@@ -4,9 +4,8 @@ import {Link} from 'react-router-dom';
 import './card.css';
 import firebase from '../../config/firebase';
 
-function EventoCard({key, img, titulo, detalhes, visualizacoes}){
+function EventoCard({id, img, titulo, detalhes, visualizacoes}){
     const [url, setUrl] = useState()
-    
     useEffect(() => {
         firebase.storage().ref(`imagens/${img}`).getDownloadURL()
             .then(url => setUrl(url))
@@ -23,7 +22,7 @@ function EventoCard({key, img, titulo, detalhes, visualizacoes}){
 
             <div className="row rodape-cartao d-flex align-items-center">
                 <div className="col-6">
-                    <Link to="/" className="btn btn-sm btn-detalhes">+ Detalhes</Link>
+                    <Link to={`/detalheEvento/${id}`} className="btn btn-sm btn-detalhes">+ Detalhes</Link>
                 </div>
                 <div className="col-6">
                     <i className="fas fa-eye"></i><span className="ml-2">{visualizacoes}</span>
