@@ -21,8 +21,7 @@ function EventoCadastro(){
     const storage = firebase.storage();
     const firestore = firebase.firestore();
 
-    function cadastrar(){
-
+    function cadastrar({match}){
         setCarregando(1);
         
         storage.ref(`imagens/${fotoNova.name}`)

@@ -11,7 +11,7 @@ import detalheEvento from './view/evento-detalhe';
 
 function App() {
   return (
-
+    
     <BrowserRouter>
       <Route exact path="/" component={Home}/>
       <Route exact path="/eventos/:parametro" component={Home}/>
@@ -20,6 +20,7 @@ function App() {
       <Route exact path="/recuperaSenha" component={UsuarioRecuperaSenha} />
       <Route exact path="/cadastraEvento" component={EventoCadastro} />  
       <Route exact path="/detalheEvento/:id" component={detalheEvento} />
+      <Route exact path="/editaEvento/:id" component={EventoCadastro} />
     </BrowserRouter>
   );
 }
